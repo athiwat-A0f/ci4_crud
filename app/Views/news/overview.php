@@ -11,7 +11,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
-                <th scope="col">Tools</th>
+                <th scope="col" width="15%">Tools</th>
               </tr>
             </thead>
             <tbody>
@@ -20,7 +20,10 @@
                   <th scope="row"><?= esc($key+1)?></th>
                   <td><?=esc($news_item['title'])?></td>
                   <td><?=esc($news_item['body'])?></td>
-                  <td><a href="/news/<?=esc($news_item['slug'], 'url')?>" class="btn btn-info">view</a></td>
+                  <td>
+                    <a href="/news/<?=esc($news_item['slug'], 'url')?>" class="btn btn-info">View</a>
+                    <a href="/news/edit/<?=esc($news_item['slug'], 'url')?>" class="btn btn-warning">Edit</a>
+                  </td>
                 </tr>
                 <?php endforeach;?>
             </tbody>

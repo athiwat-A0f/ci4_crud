@@ -14,7 +14,7 @@ class NewsModel extends Model
     {
         if ($slug === false)
         {
-            return $this->findAll();
+            return $this->orderBy('id','desc')->findAll();
         }
 
         return $this->asArray()

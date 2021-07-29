@@ -46,17 +46,48 @@ class News extends Controller
             'title' => 'required|min_length[3]|max_length[255]',
             'body' => 'required',
         ])) {
-            $model->save([
+            $model->insert([
                 'title' => $this->request->getPost('title'),
                 'slug' => url_title($this->request->getPost('title'), '-', true),
                 'body' => $this->request->getPost('body'),
             ]);
 
-            echo view('news/success');
+            return redirect()->route('/');
 
         } else {
             echo view('templates/header', ['title' => 'Create a news item']);
             echo view('news/create');
+            echo view('templates/footer');
+        }
+    }
+
+    public function edit($slug = null)
+    {
+        $model = new NewsModel();
+
+        $data['news'] = $model->getNews($slug);
+
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'title' => 'required|min_length[3]|max_length[255]',
+            'body' => 'required',
+        ])) {
+            $model
+            ->where('id',$this->request->getPost('id'))
+            ->set([
+                'title' => $this->request->getPost('title'),
+                'slug' => url_title($this->request->getPost('title'), '-', true),
+                'body' => $this->request->getPost('body'),
+            ])->update();
+         
+            return redirect()->route('/');
+
+        } else {
+            if (empty($data['news'])) {
+                throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the news item: ' . $slug);
+            }
+
+            echo view('templates/header', ['title' => 'Edit a news item']);
+            echo view('news/edit',$data);
             echo view('templates/footer');
         }
     }
