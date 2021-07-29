@@ -1,1 +1,0 @@
-<?PHP echo "HOME Work!"; ?>
