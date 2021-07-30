@@ -52,7 +52,7 @@ class News extends Controller
                 'body' => $this->request->getPost('body'),
             ]);
 
-            return redirect()->route('/');
+            return redirect()->route('/news');
 
         } else {
             echo view('templates/header', ['title' => 'Create a news item']);
@@ -79,7 +79,7 @@ class News extends Controller
                 'body' => $this->request->getPost('body'),
             ])->update();
          
-            return redirect()->route('/');
+            return redirect()->route('/news');
 
         } else {
             if (empty($data['news'])) {
