@@ -36,6 +36,8 @@
                     </div>
                     <input type="submit" class="btn btn-primary" value="Register">
                 </form>
+                <hr>
+                <a href="/login" class="btn btn-primary">Login Page</a>
             </div>
         </div>
     </div>

@@ -17,7 +17,7 @@
                 <?php $session = session(); ?>
                 <h3><?php echo "Welcome back, " . $session->get('user_name'); ?></h3>
                 <br>
-                <a href="/Login/logout" class="btn btn-danger">Logout</a>
+                <a href="/logout" class="btn btn-danger">Logout</a>
                 <a href="/news" class="btn btn-light">Go to News</a>
             </div>
         </div>

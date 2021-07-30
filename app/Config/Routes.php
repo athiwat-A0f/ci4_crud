@@ -36,6 +36,7 @@ $routes->match(['get', 'post'], 'news/create', 'News::create', ['filter' => 'aut
 $routes->match(['get', 'post'], 'news/edit/(:segment)', 'News::edit/$1', ['filter' => 'auth']);
 
 $routes->get('/', 'Register::index');
+$routes->get('/logout', 'Login::logout');
 $routes->get('news', 'News::index', ['filter' => 'auth']);
 $routes->get('news/(:segment)', 'News::view/$1', ['filter' => 'auth']);
 $routes->get('dashboard', 'Dashboard::index', ['filter' => 'auth']);
