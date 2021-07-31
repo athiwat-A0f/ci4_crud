@@ -1,6 +1,5 @@
 <div class="container-fluid">
-    <div class="d-flex justify-content-end me-3">
-      <a href="/dashboard" class="btn btn-danger">Dashboard</a> &nbsp;&nbsp;
+    <div class="d-flex justify-content-end me-3 mt-3">
       <a href="/news/create" class="btn btn-primary">Add</a>
     </div>
     <?php if (!empty($news) && is_array($news)): ?>
