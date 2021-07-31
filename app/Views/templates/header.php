@@ -8,4 +8,4 @@
 </head>
 <body>
 
-    <h1 class="text-center">News</h1>
+    <!-- <h1 class="text-center"><?= $title ?></h1> -->

@@ -1,7 +1,7 @@
-<!-- <h2><?=esc($title)?></h2> -->
 <div class="container-fluid">
     <div class="d-flex justify-content-end me-3">
-        <a href="/news/create" class="btn btn-primary">Add</a>
+      <a href="/dashboard" class="btn btn-danger">Dashboard</a> &nbsp;&nbsp;
+      <a href="/news/create" class="btn btn-primary">Add</a>
     </div>
     <?php if (!empty($news) && is_array($news)): ?>
     

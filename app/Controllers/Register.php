@@ -9,8 +9,10 @@ class Register extends Controller {
     public function index() {
         // include helper form
         helper(['form']);
-        $data = [];
-        echo view('register', $data);
+       
+        echo view('templates/header', ['title' => 'Register']);
+        echo view('register');
+        echo view('templates/footer');
     }
 
     public function save() {
@@ -34,7 +36,10 @@ class Register extends Controller {
             return redirect()->to('/login');
         } else {
             $data['validation'] = $this->validator;
+
+            echo view('templates/header', ['title' => 'Register']);
             echo view('register', $data);
+            echo view('templates/footer');
         }
     }
 }
