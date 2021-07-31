@@ -15,7 +15,7 @@
 
             <input type="hidden" name="id" value="<?= $news['id'] ?>">
             <div class="d-flex justify-content-end">
-                <a href="/" class="btn btn-secondary">Back</a> &nbsp
+                <a href="/news" class="btn btn-secondary">Back</a> &nbsp
                 <input type="submit" name="submit" value="Edit news item" class="btn btn-success" />
             </div>
         </form>

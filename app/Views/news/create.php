@@ -14,7 +14,7 @@
             <textarea name="body" class="form-control" rows="5"></textarea><br />
         
             <div class="d-flex justify-content-end">
-                <a href="/" class="btn btn-secondary">Back</a> &nbsp
+                <a href="/news" class="btn btn-secondary">Back</a> &nbsp
                 <input type="submit" name="submit" value="Create news item" class="btn btn-success" />
             </div>
         </form>
