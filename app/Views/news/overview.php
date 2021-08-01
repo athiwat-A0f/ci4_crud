@@ -1,33 +1,24 @@
-<div class="container-fluid">
-    <div class="d-flex justify-content-end me-3 mt-3">
+<div class="container">
+    <div class="d-flex justify-content-end me-3 mt-3 mb-3">
       <a href="/news/create" class="btn btn-primary">Add</a>
     </div>
     <?php if (!empty($news) && is_array($news)): ?>
-    
-        <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Title</th>
-                <th scope="col">Description</th>
-                <th scope="col" width="15%">Tools</th>
-              </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($news as $key => $news_item): ?>
-                <tr>
-                  <th scope="row"><?= esc($key+1)?></th>
-                  <td><?=esc($news_item['title'])?></td>
-                  <td><?=esc($news_item['body'])?></td>
-                  <td>
-                    <a href="/news/<?=esc($news_item['slug'], 'url')?>" class="btn btn-info">View</a>
-                    <a href="/news/edit/<?=esc($news_item['slug'], 'url')?>" class="btn btn-warning">Edit</a>
-                  </td>
-                </tr>
-                <?php endforeach;?>
-            </tbody>
-          </table>
-    
+      <div class="row mb-5">
+        <?php foreach ($news as $key => $news_item): ?>
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="<?= base_url('images/image-not-found.png') ?>" class="card-img-top" alt="NO IMAGE">
+            <div class="card-body">
+              <h5 class="card-title"><?=esc($news_item['title'])?></h5>
+              <p class="card-text"><?=esc(substr($news_item['body'],0,200))?>...</p>
+              <a href="/news/<?=esc($news_item['slug'], 'url')?>" class="btn btn-info">View</a>
+              <a href="/news/edit/<?=esc($news_item['slug'], 'url')?>" class="btn btn-warning">Edit</a>
+            </div>
+          </div>
+        </div>
+        <?php endforeach;?> 
+      </div>
+      
     <?php else: ?>
     
         <h3>No News</h3>

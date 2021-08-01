@@ -1,11 +1,15 @@
 #footer {
   position: fixed;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(211, 208, 208, 0.959);
+  color: white;
+  text-align: center;
 }
 
 .text-red {
-  color: red;
+  color: rgb(245, 3, 3);
 }
 
 .errors {
