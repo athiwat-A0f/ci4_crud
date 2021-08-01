@@ -6,7 +6,7 @@
             <?php $session = session(); ?>
             <h3><?php echo "Welcome back, " . $session->get('user_name'); ?></h3>
             <br>
-            <a href="/logout" class="btn btn-danger">Logout</a>
+            <a href="/logout" class="btn btn-danger">Logout <i class="fas fa-sign-out-alt"></i></a> 
         </div>
     </div>
 </div>

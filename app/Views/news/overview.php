@@ -1,6 +1,6 @@
 <div class="container">
     <div class="d-flex justify-content-end me-3 mt-3 mb-3">
-      <a href="/news/create" class="btn btn-primary">Add</a>
+      <a href="/news/create" class="btn btn-primary"><i class="fas fa-plus-square"></i> Add</a>
     </div>
     <?php if (!empty($news) && is_array($news)): ?>
       <div class="row mb-5">
@@ -11,8 +11,8 @@
             <div class="card-body">
               <h5 class="card-title"><?=esc($news_item['title'])?></h5>
               <p class="card-text"><?=esc(substr($news_item['body'],0,200))?>...</p>
-              <a href="/news/<?=esc($news_item['slug'], 'url')?>" class="btn btn-info">View</a>
-              <a href="/news/edit/<?=esc($news_item['slug'], 'url')?>" class="btn btn-warning">Edit</a>
+              <a href="/news/<?=esc($news_item['slug'], 'url')?>" class="btn btn-info"><i class="fas fa-eye"></i> View</a>
+              <a href="/news/edit/<?=esc($news_item['slug'], 'url')?>" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
             </div>
           </div>
         </div>

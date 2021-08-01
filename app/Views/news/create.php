@@ -14,8 +14,8 @@
             <textarea name="body" class="form-control" rows="5"></textarea><br />
         
             <div class="d-flex justify-content-end">
-                <a href="/news" class="btn btn-secondary">Back</a> &nbsp
-                <input type="submit" name="submit" value="Create news item" class="btn btn-success" />
+                <a href="/news" class="btn btn-secondary"><i class="fas fa-arrow-alt-circle-left"></i> Back</a> &nbsp
+                <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Create news item</button>
             </div>
         </form>
     </div>

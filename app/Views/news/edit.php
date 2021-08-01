@@ -15,8 +15,8 @@
 
             <input type="hidden" name="id" value="<?= $news['id'] ?>">
             <div class="d-flex justify-content-end">
-                <a href="/news" class="btn btn-secondary">Back</a> &nbsp
-                <input type="submit" name="submit" value="Edit news item" class="btn btn-success" />
+                <a href="/news" class="btn btn-secondary"><i class="fas fa-arrow-alt-circle-left"></i> Back</a> &nbsp
+                <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Edit news item</button>
             </div>
         </form>
     </div>
