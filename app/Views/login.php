@@ -15,10 +15,10 @@
                     <label for="inputpassword" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control" id="inputforpassword">
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Login <i class="fas fa-sign-in-alt"></i></button>
             </form>
             <hr>
-            <a href="/register" class="btn btn-primary">Register Page</a>
+            <a href="/register" class="btn btn-primary">Register Page <i class="fas fa-registered"></i></a>
         </div>
     </div>
 </div>

@@ -23,10 +23,10 @@
                     <label for="inputconfpassword" class="form-lable">Confirm Password</label>
                     <input type="password" name="confpassword" class="form-control">
                 </div>
-                <input type="submit" class="btn btn-primary" value="Register">
+                <button type="submit" class="btn btn-primary">Register <i class="fas fa-registered"></i></button>
             </form>
             <hr>
-            <a href="/login" class="btn btn-primary">Login Page</a>
+            <a href="/login" class="btn btn-primary">Login Page <i class="fas fa-sign-in-alt"></i></a>
         </div>
     </div>
 </div>
