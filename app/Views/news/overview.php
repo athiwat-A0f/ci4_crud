@@ -5,9 +5,9 @@
     <?php if (!empty($news) && is_array($news)): ?>
       <div class="row mb-5">
         <?php foreach ($news as $key => $news_item): ?>
-        <div class="col-sm-4">
+        <div class="col-sm-4 mb-3">
           <div class="card">
-            <img src="<?= base_url('images/image-not-found.png') ?>" class="card-img-top" alt="NO IMAGE">
+            <img src="<?= base_url('images/uploads/'.$news_item['thumbnail']) ?>" class="card-img-top" alt="NO IMAGE">
             <div class="card-body">
               <h5 class="card-title"><?=esc($news_item['title'])?></h5>
               <p class="card-text"><?=esc(substr($news_item['body'],0,200))?>...</p>
