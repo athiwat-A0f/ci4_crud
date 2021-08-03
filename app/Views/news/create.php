@@ -4,8 +4,13 @@
 
 <div class="ps-2 ms-2">
     <div class="col-sm-6 mt-4">
-        <form action="/news/create" method="post">
+        <form action="/news/create" method="post" enctype="multipart/form-data">
             <?= csrf_field() ?>
+
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Thumbnail</label>
+                <input class="form-control" type="file" name="thumbnail" id="formFile">
+            </div>
         
             <label for="title">Title</label> <span class="text-red">*</span>
             <input type="input" name="title" class="form-control"/><br />

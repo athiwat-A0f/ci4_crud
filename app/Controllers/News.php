@@ -46,10 +46,20 @@ class News extends Controller
             'title' => 'required|min_length[3]|max_length[255]',
             'body' => 'required',
         ])) {
+
+            $file = $this->request->getFile('thumbnail');
+            $newName = "";
+            if ($file->isValid())
+            {
+                $newName = $file->getRandomName();
+                $file->move('images/uploads', $newName);
+            }
+         
             $model->insert([
                 'title' => $this->request->getPost('title'),
                 'slug' => url_title($this->request->getPost('title'), '-', true),
                 'body' => $this->request->getPost('body'),
+                'thumbnail' => $newName,
             ]);
 
             return redirect()->to('/news');
@@ -71,6 +81,24 @@ class News extends Controller
             'title' => 'required|min_length[3]|max_length[255]',
             'body' => 'required',
         ])) {
+
+            $file = $this->request->getFile('thumbnail');
+            $newName = "";
+            if ($file->isValid())
+            {
+                if($this->request->getPost('thumbnail_old') != "image-not-found.png") {
+                    unlink('images/uploads/'.$this->request->getPost('thumbnail_old')); 
+                }
+                $newName = $file->getRandomName();
+                $file->move('images/uploads', $newName);
+
+                $model
+                ->where('id',$this->request->getPost('id'))
+                ->set([
+                    'thumbnail' => $newName,
+                ])->update();
+            }
+
             $model
             ->where('id',$this->request->getPost('id'))
             ->set([
