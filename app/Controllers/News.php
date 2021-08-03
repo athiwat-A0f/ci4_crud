@@ -48,7 +48,7 @@ class News extends Controller
         ])) {
 
             $file = $this->request->getFile('thumbnail');
-            $newName = "";
+            $newName = "image-not-found.png";
             if ($file->isValid())
             {
                 $newName = $file->getRandomName();
@@ -83,7 +83,6 @@ class News extends Controller
         ])) {
 
             $file = $this->request->getFile('thumbnail');
-            $newName = "";
             if ($file->isValid())
             {
                 if($this->request->getPost('thumbnail_old') != "image-not-found.png") {
